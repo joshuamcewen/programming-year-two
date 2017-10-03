@@ -3,8 +3,10 @@
  */
 public class PolySolve {
 
+    // Declare variables and discriminant
     private double a, b, c, d;
 
+    // Initialise equation
     public PolySolve(double a, double b, double c)
     {
         this.a = a;
@@ -13,6 +15,7 @@ public class PolySolve {
         this.d = b * b - 4 * a * c;
     }
 
+    // Calculate and return the roots.
     private double getFirstRoot()
     {
         return (-this.b + Math.sqrt(this.d)) / (2 * a);
@@ -22,6 +25,18 @@ public class PolySolve {
         return (-this.b - Math.sqrt(this.d)) / (2 * a);
     }
 
+    // Getters for different variables.
+    private double getA() { return this.a; }
+    private double getB() { return this.b; }
+    private double getC() { return this.c; }
+
+    // Add a quadratic object to another and return a new quadratic object.
+    public PolySolve add(PolySolve product)
+    {
+        return new PolySolve(this.a + product.getA(), this.b + product.getB(), this.c + product.getC());
+    }
+
+    // Display the quadratic along with its roots.
     public void display()
     {
         System.out.println(a + "x^2 + " + b + "x + " + c + " = 0");
