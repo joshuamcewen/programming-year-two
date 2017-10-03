@@ -7,8 +7,7 @@ public class PolySolve {
     private double a, b, c, d;
 
     // Initialise equation
-    public PolySolve(double a, double b, double c)
-    {
+    public PolySolve(double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -16,13 +15,9 @@ public class PolySolve {
     }
 
     // Calculate and return the roots.
-    private double getFirstRoot()
+    private double[] getRoots()
     {
-        return (-this.b + Math.sqrt(this.d)) / (2 * a);
-    }
-    private double getSecondRoot()
-    {
-        return (-this.b - Math.sqrt(this.d)) / (2 * a);
+        return new double[]{(-this.b + Math.sqrt(this.d)) / (2 * a), (-this.b - Math.sqrt(this.d)) / (2 * a)};
     }
 
     // Getters for different variables.
@@ -31,27 +26,23 @@ public class PolySolve {
     private double getC() { return this.c; }
 
     // Add a quadratic object to another and return a new quadratic object.
-    public PolySolve add(PolySolve product)
-    {
+    public PolySolve add(PolySolve product) {
         return new PolySolve(this.a + product.getA(), this.b + product.getB(), this.c + product.getC());
     }
 
     // Display the quadratic along with its roots.
     public void display()
     {
+        double roots[] = this.getRoots();
+
         System.out.println(a + "x^2 + " + b + "x + " + c + " = 0");
 
-        if(this.a == 0)
-        {
+        if(this.a == 0) {
             System.out.println("This is not a quadratic.");
-        }
-        else if(this.d >= 0)
-        {
-            System.out.println("First root: " + this.getFirstRoot());
-            System.out.println("Second root: " + this.getSecondRoot());
-        }
-        else
-        {
+        } else if(this.d >= 0) {
+            System.out.println("First root: " + roots[0]);
+            System.out.println("Second root: " + roots[1]);
+        } else {
             System.out.println("No real roots for this quadratic.");
         }
     }

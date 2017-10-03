@@ -2,8 +2,7 @@
  * Created by Joshua on 02/10/2017.
  */
 public class Controller {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Quadratic one
         PolySolve equation1 = new PolySolve(0, 2.7, 6.0);
         equation1.display();
