@@ -12,13 +12,15 @@ public class Controller {
         System.out.println(student1.toString());
         System.out.println();
 
-        // Administrator object
-        Administrator admin1 = new Administrator("James", "12 Oldfield Moor", "+44161320453", "james@adm.mmu.ac.uk");
+        // Administrator object, declared as Employee
+        Employee admin1 = new Administrator("James", "12 Oldfield Moor", "+44161320453", "james@adm.mmu.ac.uk");
         admin1.setDepartment("Administration");
         admin1.setSalary(25000);
         admin1.setStartDate(new Date("01/02/2009"));
-        admin1.setOfficeHours("Thursdays 12-2pm");
-        admin1.setRank(1);
+
+        // When invoking a sub class method, explicit downcasting is needed as the super class does not have access to methods.
+        ((Administrator)admin1).setOfficeHours("Thursdays 12-2pm");
+        ((Administrator)admin1).setRank(1);
         System.out.println(admin1.toString());
         System.out.println();
 
