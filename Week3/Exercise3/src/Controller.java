@@ -18,7 +18,7 @@ public class Controller {
         System.out.println();
 
         // Administrator object, declared as Employee
-        Employee admin1 = new Administrator("James", "12 Oldfield Moor", "+44161320453", "james@adm.mmu.ac.uk");
+        Administrator admin1 = new Administrator("James", "12 Oldfield Moor", "+44161320453", "james@adm.mmu.ac.uk");
         admin1.setDepartment("Administration");
         admin1.setSalary(25000);
 
@@ -30,9 +30,9 @@ public class Controller {
 
         admin1.setStartDate(start);
 
-        // Downcasting?
-        ((Administrator)admin1).setOfficeHours("Thursdays 12-2pm");
-        ((Administrator)admin1).setRank(1);
+        // Down casting?
+        admin1.setOfficeHours("Thursdays 12-2pm");
+        admin1.setRank(1);
         System.out.println(admin1.toString());
         System.out.println();
 
