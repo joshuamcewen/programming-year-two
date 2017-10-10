@@ -3,7 +3,7 @@ public class Lecturer extends Employee {
 
     public Lecturer(String name, String address, String phone_number, String email_address, String title) {
         super(name, address, phone_number, email_address);
-        this.title = title;
+        this.setTitle(title);
     }
 
     public void setTitle(String title) { this.title = title; }

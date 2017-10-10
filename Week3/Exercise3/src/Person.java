@@ -5,10 +5,10 @@ public class Person {
     private String email_address;
 
     Person(String name, String address, String phone_number, String email_address) {
-        this.name = name;
-        this.address = address;
-        this.phone_number = phone_number;
-        this.email_address = email_address;
+        this.setName(name);
+        this.setAddress(address);
+        this.setPhone(phone_number);
+        this.setEmail(email_address);
     }
 
     public void setName(String name) { this.name = name; }

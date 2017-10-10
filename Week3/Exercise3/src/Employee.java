@@ -9,6 +9,7 @@ public class Employee extends Person {
 
     public Employee(String name, String address, String phone_number, String email_address) {
         super(name, address, phone_number, email_address);
+        dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     }
 
     public void setDepartment(String department) { this.department = department; }
@@ -25,6 +26,6 @@ public class Employee extends Person {
         return  super.toString() + ", " +
                 "Department: " + this.getDepartment() + ", " +
                 "Salary: " + this.getSalary() + ", " +
-                "Start date: " + this.getStartDate();
+                "Start date: " + dateFormat.format(this.getStartDate());
     }
 }
