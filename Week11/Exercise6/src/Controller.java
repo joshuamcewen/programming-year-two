@@ -36,9 +36,8 @@ public class Controller extends Application {
         GridPane.setConstraints(loginBtn, 1, 2);
 
         grid.getStylesheets().add("/style.css");
-        grid.getStyle()
         grid.getChildren().addAll(emailLabel, emailInput, passLabel, passInput, loginBtn);
-        primaryStage.setScene(new Scene(grid, 300, 300));
+        primaryStage.setScene(new Scene(grid, 300, 200));
         primaryStage.show();
     }
 }
