@@ -1,30 +1,39 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author Joshua McEwen
  */
 public class GUI extends JFrame {
 
-    private Container frameContainer;
+    private JButton redBtn;
+    private JButton blueBtn;
 
     public GUI() {
         super("Event Handling");
-        frameContainer = new JFrame();
 
-        JButton redBtn = new JButton("Red");
-        JButton blueBtn = new JButton("Blue");
+        this.setLayout(new FlowLayout());
+
+        redBtn = new JButton("Red");
+        blueBtn = new JButton("Blue");
+
+        this.add(redBtn);
+        this.add(blueBtn);
 
 
-        redBtn.addMouseListener(new mouseEventListener());
-        blueBtn.addMouseListener(new mouseEventListener());
+        redBtn.addActionListener(new mouseEventListener());
+        blueBtn.addActionListener(new mouseEventListener());
     }
 
-    private class mouseEventListener implements MouseListener {
-        public void mouseEntered(MouseEvent me) {
-
+    private class mouseEventListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == redBtn) {
+                getContentPane().setBackground(Color.RED);
+            } else if(e.getSource() == blueBtn) {
+                getContentPane().setBackground(Color.BLUE);
+            }
         }
     }
 

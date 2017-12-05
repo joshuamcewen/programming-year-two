@@ -9,7 +9,7 @@ public class Controller {
             @Override
             public void run() {
                 GUI f = new GUI();
-                f.setSize(400, 150);
+                f.setSize(400, 200);
                 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 f.setVisible(true);
             }
