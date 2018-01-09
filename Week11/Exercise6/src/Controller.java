@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class Controller extends Application {
@@ -35,9 +36,17 @@ public class Controller extends Application {
         Button loginBtn = new Button("Log in");
         GridPane.setConstraints(loginBtn, 1, 2);
 
+        Button closeBtn = new Button("Close");
+        closeBtn.getStyleClass().add("close-btn");
+        GridPane.setConstraints(closeBtn, 1, 3);
+        closeBtn.setOnAction(e -> System.exit(0));
+
+
         grid.getStylesheets().add("/style.css");
-        grid.getChildren().addAll(emailLabel, emailInput, passLabel, passInput, loginBtn);
-        primaryStage.setScene(new Scene(grid, 300, 200));
+        grid.getChildren().addAll(emailLabel, emailInput, passLabel, passInput, loginBtn, closeBtn);
+        primaryStage.setScene(new Scene(grid, 300, 250));
+        primaryStage.setResizable(false);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
 }
